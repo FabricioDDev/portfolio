@@ -1,88 +1,391 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricio Di Paola | Backend Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Fabricio Di Paola | Sistemas para Negocios</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phone-reflection {
+            position: relative;
+        }
+        .phone-reflection::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 10%;
+            right: 10%;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.15);
+            filter: blur(20px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">&lt;Fabricio Di Paola /&gt;</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#skills">Tecnologías</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-            </button>
-    </header>
-    <main class="container">
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1 class="hero-title">Hola, soy <span class="highlight">Fabricio Di Paola</span></h1>
-                <p class="hero-subtitle">Desarrollador Backend & Tecnico Programador</p>
-                <p class="hero-description">Especializado en construir soluciones de software robustas, bases de datos eficientes y APIs escalables.</p>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased relative">
+
+    <!-- BOTÓN FIJO DE WHATSAPP -->
+    <a href="#" 
+       target="_blank" 
+       id="whatsapp-fixed"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl shadow-emerald-950/50 hover:scale-110 active:scale-95 transition-all animate-bounce md:animate-none"
+       title="Chatear con Fabricio">
+        <i class="fab fa-whatsapp"></i>
+        <span class="absolute inset-0 rounded-full bg-emerald-500/30 animate-ping pointer-events-none"></span>
+    </a>
+
+    <!-- NAV BAR -->
+    <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight">Fabricio.<span class="text-blue-500">Dipaola</span></span>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+                <a href="#servicios" class="hover:text-slate-100 transition-colors">Servicios</a>
+                <a href="#stack" class="hover:text-slate-100 transition-colors">Tecnologías</a>
+                <a href="#portafolio" class="hover:text-slate-100 transition-colors">Portafolio</a>
+                <a href="#sobre-mi" class="hover:text-slate-100 transition-colors">Sobre mí</a>
             </div>
-        </section>
-        <section class="about section" id="about">
-            <h2 class="section-title">Sobre Mí</h2>
-            <p>Estudiante avanzado de la Tecnicatura Universitaria en Programación (Universidad Tecnologica Nacional) con foco en arquitectura de software, bases de datos relacionales y código limpio.</p>
-        </section>
-        <section class="skills section" id="skills">
-            <h2 class="section-title">Stack Tecnológico</h2>
-            <div class="skills-grid" id="skills-container"></div>
-        </section>
-        <section class="projects section" id="projects">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid" id="projects-container"></div>
-        </section>
-        <section class="contact section" id="contact">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-container">
+
+            <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+                ¡Hablemos!
+            </a>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- HERO SECTION -->
+        <header class="relative overflow-hidden border-b border-slate-900 bg-gradient-to-b from-slate-950 to-slate-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                <div class="contact-info">
-                    <h3>¿Habitamos el mismo stack?</h3>
-                    <p>Estoy disponible para proyectos backend, integraciones de sistemas y posiciones de desarrollo de software.</p>
-                    <div class="contact-links-list">
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com/in/fabricio-di-paola" target="_blank">LinkedIn Profile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/FabricioDDev" target="_blank">GitHub Profile</a>
-                        </div>
+                <!-- Columna de Imagen -->
+                <div class="lg:col-span-5 flex justify-center relative order-1 lg:order-2 mt-2 lg:mt-0">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full lg:rounded-2xl blur opacity-15 lg:opacity-20 pointer-events-none"></div>
+                    <div class="relative w-48 h-48 lg:w-full lg:max-w-full lg:h-[450px] rounded-full lg:rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                        <img src="Gemini_Generated_Image.png" alt="Fabricio Di Paola en su espacio de trabajo" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+                
+                <!-- Columna de Texto -->
+                <div class="lg:col-span-7 z-10 text-center lg:text-left order-2 lg:order-1">
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 mb-4 lg:mb-6 border border-blue-500/20">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Desarrollador Backend .NET
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 lg:mb-6 leading-tight">
+                        Hola, soy<br class="hidden sm:block">
+                        <span class="gradient-text">Fabricio Di Paola</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-6 lg:mb-8">
+                       Desarrollador Backend enfocado en la creación de servicios robustos, optimización de consultas a bases de datos y aplicación de arquitectura limpia. Mi experiencia desarrollando soluciones de software de forma autónoma me dio una fuerte orientación a resultados, autonomía y capacidad para resolver problemas complejos bajo presión. Actualmente busco sumarme a un equipo de ingeniería donde pueda aportar valor con mi stack y seguir creciendo bajo metodologías ágiles
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3.5 rounded-xl shadow-lg shadow-blue-600/20 transition-all text-center">
+                            ¡Hablemos!
+                        </a>
+                        <a href="#portafolio" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-medium px-6 py-3.5 rounded-xl transition-all text-center">
+                            Ver trabajos reales
+                        </a>
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formspree.io/f/mkoabweo" method="POST">
-                    <div class="form-group">
-                        <label for="name">Tu Nombre</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Tu Correo Electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="johndoe@backend.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tu Mensaje / Requerimientos</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Describe los requerimientos técnicos de tu proyecto..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-right: 0; cursor: pointer;">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                </form>
+            </div>
+            <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        </header>
 
+        <!-- SECCIÓN EDUCACIÓN MEJORADA -->
+        <section class="border-b border-slate-900 bg-slate-900/30 py-16">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-400 block mb-2">Formación Académica</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold">Educación Formal</h2>
+                </div>
+                
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-8 hover:border-slate-700 transition-all">
+                    <!-- Contenedor Imagen Universidad -->
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden bg-white flex items-center justify-center p-2 flex-shrink-0 border border-slate-800 shadow-lg">
+                        <img src="utn.jpg" alt="Universidad Tecnológica Nacional" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Información de Carrera -->
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start gap-2 mb-2">
+                            <h3 class="text-xl font-bold tracking-tight">Universidad Tecnológica Nacional</h3>
+                            <span class="inline-block self-center sm:self-auto bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-2.5 py-0.5 rounded-full font-semibold">
+                                2024 - 2026
+                            </span>
+                        </div>
+                        <p class="text-emerald-400 font-medium text-sm mb-4">Tecnicatura Universitaria en Programación</p>
+                        
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left text-xs text-slate-400 font-medium">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500 text-[10px]"></i> Algoritmos y Estructuras de Datos</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500 text-[10px]"></i> Arquitectura de Sistemas Relacionales</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500 text-[10px]"></i> Modelado Avanzado de Datos (3FN)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-500 text-[10px]"></i> Programación Orientada a Objetos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!-- STACK TECNOLÓGICO -->
+        <section id="stack" class="py-20 border-t border-slate-900 bg-slate-900/40">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Stack Tecnológico</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Herramientas y tecnologías de vanguardia que utilizo para garantizar el rendimiento, seguridad y escalabilidad de tu infraestructura digital.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Lenguajes -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4 text-blue-500">
+                            <i class="fas fa-terminal text-xl"></i>
+                            <h3 class="text-lg font-bold">Lenguajes</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> C#</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> SQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4 text-emerald-500">
+                            <i class="fas fa-cubes text-xl"></i>
+                            <h3 class="text-lg font-bold">Frameworks</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> .NET 9</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> .NET FRAMEWORK</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bases de Datos -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4 text-purple-500">
+                            <i class="fas fa-database text-xl"></i>
+                            <h3 class="text-lg font-bold">Bases de Datos</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> SQL Server</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> MySQL</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Normalizacion</li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Herramientas -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4 text-amber-500">
+                            <i class="fas fa-tools text-xl"></i>
+                            <h3 class="text-lg font-bold">Herramientas</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Git / GitHub</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Gitflow Workflow</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Scrum</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- SECCIÓN PORTAFOLIO TOTALMENTE MEJORADA -->
+        <section id="portafolio" class="py-20 border-t border-slate-900 bg-slate-900/10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Portafolio de Proyectos</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Sistemas en producción y arquitecturas robustas diseñadas para optimizar operaciones reales.</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Proyecto 1 -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 p-6 sm:p-8 items-center">
+                      
+                        <div class="lg:col-span-5 rounded-2xl overflow-hidden w-full aspect-[4/3] relative group border border-slate-800 bg-slate-950 flex items-center justify-center">
+                            <img src="proyectoMyf1.png" alt="Dashboard del Sistema de Control de Stock" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/10 pointer-events-none"></div>
+                        </div>
+                        <!-- Columna Datos -->
+                        <div class="lg:col-span-7 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-4">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">Frontend</span>
+                                    
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <a href="#" target="_blank" class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-1.5 font-medium" title="Ver Repositorio de Código">
+                                            <i class="fab fa-github text-base"></i> Código
+                                        </a>
+                                        <span class="text-slate-700">|</span>
+                                        <a href="https://myf-estetica.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1.5 font-medium" title="Ver Sitio Web Desplegado">
+                                            <i class="fas fa-external-link-alt text-xs"></i> Visitar web
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="text-2xl font-bold mt-3 mb-3">Web institucional para Comercio</h3>
+                                
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    <strong class="text-slate-200 block mb-1">Descripción:</strong>
+                                   Web institucional para la marca MyF estetica, con el objetivo de captacion de clientes, e informar los servicios
+                                </p>
+                                
+                                <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-xs text-slate-400 mb-5">
+                                    <strong class="text-blue-400 block uppercase tracking-wide mb-1"><i class="fas fa-microchip mr-1.5"></i> Detalle Técnico:</strong>
+                                    Procesamiento de lógicas complejas para la unificación de estadísticas históricas. Trabajo colaborativo basado en Gitflow y metodologías ágiles Scrum para la definición de requerimientos de software.
+                                </div>
+                            </div>
+                            <!-- Badges -->
+                            <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-400">
+                                <span class="bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">HTML</span>
+                                <span class="bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">CSS</span>
+                                <span class="bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">JAVASCRIPT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi" class="py-20 bg-slate-900/40 border-t border-slate-900">
+            <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-shrink-0 relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-slate-800 shadow-xl">
+                    <img src="Gemini_Generated_Image.png" alt="Fabricio Di Paola" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h3 class="text-3xl font-bold mb-2 tracking-tight">Fabricio Di Paola</h3>
+                    <p class="text-blue-400 font-semibold mb-4 tracking-wide text-sm uppercase">Desarrollador Backend .NET</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Me apasiona resolver problemas operativos reales mediante software de alto rendimiento. No implemento soluciones genéricas ni plantillas rígidas; mi enfoque se basa en analizar cómo operás en el día a día para construir la infraestructura digital exacta que necesitas. Trabajo de forma directa con vos, asegurando transparencia y código escalable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+      <!-- FORMULARIO DE CAPTACIÓN Y CONTACTO RÁPIDO -->
+        <section id="contacto" class="py-20 border-t border-slate-800 bg-slate-900/20">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-3">¡Pongámonos en contacto!</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Ya sea para optimizar un comercio existente o para integrar posiciones backend dedicadas, hablemos de soluciones tecnológicas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                    
+                    <!-- Columna Izquierda: Información de contacto rápido -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-3 tracking-tight">¿Habitamos el mismo stack?</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                                Estoy disponible para proyectos backend, integraciones de sistemas complejos y posiciones corporativas de desarrollo de software.
+                            </p>
+                            
+                            <!-- Lista de enlaces con etiquetas estilizadas -->
+                            <div class="space-y-3">
+                                <!-- LinkedIn -->
+                                <a href="https://linkedin.com/in/fabricio-di-paola" target="_blank" class="flex items-center gap-3 bg-slate-950/60 border border-slate-800 hover:border-blue-500/50 p-3.5 rounded-xl transition-all group">
+                                    <div class="w-9 h-9 bg-blue-500/10 text-blue-400 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-[11px] uppercase font-bold tracking-wider text-slate-500">LinkedIn</span>
+                                        <span class="text-sm font-semibold text-slate-300 group-hover:text-slate-100 transition-colors">Fabricio Di Paola</span>
+                                    </div>
+                                </a>
+
+                                <!-- GitHub -->
+                                <a href="https://github.com/FabricioDDev" target="_blank" class="flex items-center gap-3 bg-slate-950/60 border border-slate-800 hover:border-slate-600 p-3.5 rounded-xl transition-all group">
+                                    <div class="w-9 h-9 bg-slate-800/80 text-slate-300 rounded-lg flex items-center justify-center group-hover:bg-slate-700 group-hover:text-white transition-all">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-[11px] uppercase font-bold tracking-wider text-slate-500">GitHub</span>
+                                        <span class="text-sm font-semibold text-slate-300 group-hover:text-slate-100 transition-colors">FabricioDDev</span>
+                                    </div>
+                                </a>
+
+                                <!-- Correo Directo -->
+                                <div class="flex items-center gap-3 bg-slate-950/60 border border-slate-800 p-3.5 rounded-xl">
+                                    <div class="w-9 h-9 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-[11px] uppercase font-bold tracking-wider text-slate-500">Correo Directo</span>
+                                        <span class="text-sm font-semibold text-slate-300 selection:bg-blue-500/30">damianfabricio59@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Formulario Asíncrono de Correo -->
+                    <form action="https://formspree.io/f/mkoabweo" method="POST" class="lg:col-span-7 space-y-5 bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-800">
+                        <div>
+                            <label for="form-name" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Nombre</label>
+                            <input type="text" id="form-name" name="name" placeholder="John Doe" required 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm">
+                        </div>
+                        
+                        <div>
+                            <label for="form-email" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Correo Electrónico</label>
+                            <input type="email" id="form-email" name="email" placeholder="johndoe@backend.com" required 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm">
+                        </div>
+                        
+                        <div>
+                            <label for="form-message" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Mensaje / Requerimientos</label>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Describe los requerimientos técnicos de tu proyecto..." required 
+                                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer text-sm">
+                            <i class="fas fa-paper-plane text-xs"></i> Enviar Mensaje por Correo
+                        </button>
+                    </form>
+
+                </div>
             </div>
         </section>
     </main>
-    <script src="js/data.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/main.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-900">
+        <p>&copy; 2026 Fabricio Di Paola. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const business = document.getElementById('business').value;
+            const phone = document.getElementById('phone').value;
+            
+            const baseText = `¡Hola Fabricio! Vi tu Landing Page.\n\n📌 *Nombre:* ${name}\n🏪 *Negocio:* ${business}\n📱 *Teléfono:* ${phone}\n\nMe interesa el diagnóstico gratuito para mi comercio.`;
+            const encodedText = encodeURIComponent(baseText);
+            
+            const whatsappNumber = "5491136586205";
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
+        });
+
+        // Sincronizar número en el botón flotante fijo
+        const fixedWhatsapp = document.getElementById('whatsapp-fixed');
+        const defaultNumber = "5491136586205";
+        const defaultMsg = encodeURIComponent("¡Hola Fabricio! Vengo de tu web. Me gustaría hacerte una consulta sobre mi negocio.");
+        fixedWhatsapp.href = `https://wa.me/${defaultNumber}?text=${defaultMsg}`;
+    </script>
 </body>
-</html> 
+</html>
